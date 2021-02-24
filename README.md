@@ -16,3 +16,6 @@ Run main.py or extra.py.
 Note:
 You can change json file with any languange and it will be works.
 Just make the same format with english dictionary json file included in this code.
+
+
+If someone find it useful and need any help to adapt it etc. just leave it in the issues. I just code this in the break time so forgive me if there is any mistake, flaw, or issues.
