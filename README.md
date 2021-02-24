@@ -1,9 +1,12 @@
 # ScrambledWordsSolver
 A simple python code to solve scrambled alphabets in word. 
 Executable file included if you simply want to use it.
+Use:
+- ScrambledWordsSolver.exe is the program you want to use if you want to build exactly using every alphabets in the scrambled word
+- ScrambledWordsSolverExtra.exe is the program you want to use if you want to build exactly using every alphabets in the scrambled word and partially using existing alphabets given in the input
 
 How to use:
-Run main.py.
+Run main.py or extra.py.
 
 Note:
 You can change json file with any languange and it will be works.
