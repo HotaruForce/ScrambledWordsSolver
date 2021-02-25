@@ -34,3 +34,5 @@ You can change json file with any languange and it will be works.
 Just make sure same format with english dictionary json file included in this code.
 
 If someone find it useful and need any help to adapt it etc. just leave it in the issues. I just code this in the break time so forgive me if there is any mistake, flaw, or issues.
+
+I just keep thinking to add classification of many alphabet used or any other feature but the basic task is already done for me so I will keep it short and simple except when I think it really needed.
