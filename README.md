@@ -16,11 +16,17 @@ Example:
 input: "test"
 expected output: 
 - ScrambledWordsSolver.exe : 
+
   match word(s): 3
+  
   ['sett', 'stet', 'test']
+  
 - ScrambledWordsSolverExtra.exe :
+
   match word(s): 15
+  
   ['sett', 'stet', 'test', 'est', 'set', 'tst', 'es', 'et', 'se', 'st', 'te', 'ts', 'e', 's', 't']
+  
   (Now, I know there is a single alphabet counted there but in the dictionary it is exist so I didn't changed it because it exists.)
 
 Note:
