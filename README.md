@@ -12,6 +12,11 @@ Use:
 
 How to use:
 Run main.py or extra.py.
+Example:
+input: "test"
+expected output: 
+- ScrambledWordsSolver.exe :
+- ScrambledWordsSolverExtra.exe :
 
 Note:
 You can change json file with any languange and it will be works.
