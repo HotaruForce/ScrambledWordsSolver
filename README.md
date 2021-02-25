@@ -36,3 +36,5 @@ Just make sure same format with english dictionary json file included in this co
 If someone find it useful and need any help to adapt it etc. just leave it in the issues. I just code this in the break time so forgive me if there is any mistake, flaw, or issues.
 
 I just keep thinking to add classification of many alphabet used or any other feature but the basic task is already done for me so I will keep it short and simple except when I think it really needed.
+
+Word list builded from this repository https://github.com/dwyl/english-words which refers to [http://www.infochimps.com/datasets/word-list-350000-simple-english-words-excel-readable](https://web.archive.org/web/20131118073324/http://www.infochimps.com/datasets/word-list-350000-simple-english-words-excel-readable) (archived). Copyright still belongs to them.
