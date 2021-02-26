@@ -1,19 +1,32 @@
 import json #for json file reading
+import os
 
-def resource_path(relative_path):
+isFileFound = False
+def open_file(relative_path):
 	""" Get absolute path to resource, works for dev and for PyInstaller """
 	try:
 		# PyInstaller creates a temp folder and stores path in _MEIPASS
-		base_path = sys._MEIPASS
+		path = sys._MEIPASS
+		with open(os.path.join(path, relative_path), 'r') as f:
+			data = json.load(f)
+		isFileFound = True
 	except Exception:
-		base_path = os.path.abspath(".")
-
-	return os.path.join(base_path, relative_path)
+		try:
+			path, filename = os.path.split(os.path.realpath(__file__))
+			with open(os.path.join(path, relative_path), 'r') as f:
+				data = json.load(f)
+			isFileFound = True
+		except FileNotFoundError:
+			print("File not found. Press anykey to exit...")
+			os.system('pause')
+		except Exception:
+			print("Program not working correctly. Press anykey to exit.")
+			os.system('pause')
+	return data
 	
 word_dict = []
-with open(("words_with_len.json"), 'r') as f:
-	words_with_len = json.load(f)
-
+relative_file_path = "words_with_len.json"
+words_with_len = open_file(relative_file_path)
 def result_search():
 	input_sample = input("Enter the scrambled word: ")
 	output_result = []
