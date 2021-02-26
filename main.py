@@ -1,5 +1,6 @@
 import json #for json file reading
 import os
+import sys
 
 isFileFound = False
 def open_file(relative_path):
@@ -17,16 +18,15 @@ def open_file(relative_path):
 				data = json.load(f)
 			isFileFound = True
 		except FileNotFoundError:
-			print("File not found. Press anykey to exit...")
+			print("Dictionary file not found. Press anykey to exit...")
 			os.system('pause')
+			sys.exit()
 		except Exception:
 			print("Program not working correctly. Press anykey to exit.")
 			os.system('pause')
+			sys.exit()
 	return data
-	
-word_dict = []
-relative_file_path = "words_with_len.json"
-words_with_len = open_file(relative_file_path)
+
 def result_search():
 	input_sample = input("Enter the scrambled word: ")
 	output_result = []
@@ -41,6 +41,10 @@ def result_search():
 			output_result.append(word)
 	print("match word(s): " + str(len(output_result)))
 	print(output_result)
+
+word_dict = []
+relative_file_path = "data\words_with_len.json"
+words_with_len = open_file(relative_file_path)
 
 repeat_list = ["Y", "y", "Yes", "yes"]
 repeat_input = "y"

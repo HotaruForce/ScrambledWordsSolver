@@ -1,18 +1,31 @@
 import json #for json file reading
+import os
+import sys
 
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-        
-word_dict = []
-with open(("words_with_len.json"), 'r') as f:
-    words_with_len = json.load(f)
+isFileFound = False
+def open_file(relative_path):
+	""" Get absolute path to resource, works for dev and for PyInstaller """
+	try:
+		# PyInstaller creates a temp folder and stores path in _MEIPASS
+		path = sys._MEIPASS
+		with open(os.path.join(path, relative_path), 'r') as f:
+			data = json.load(f)
+		isFileFound = True
+	except Exception:
+		try:
+			path, filename = os.path.split(os.path.realpath(__file__))
+			with open(os.path.join(path, relative_path), 'r') as f:
+				data = json.load(f)
+			isFileFound = True
+		except FileNotFoundError:
+			print("Dictionary file not found. Press anykey to exit...")
+			os.system('pause')
+			sys.exit()
+		except Exception:
+			print("Program not working correctly. Press anykey to exit.")
+			os.system('pause')
+			sys.exit()
+	return data
 
 def result_search():
     input_sample = input("Enter list of available character(s) for building word(s): ")
@@ -32,6 +45,10 @@ def result_search():
         
     print("match word(s): " + str(len(output_result)))
     print(output_result)
+	
+word_dict = []
+relative_file_path = "data\words_with_len.json"
+words_with_len = open_file(relative_file_path)
 
 repeat_list = ["Y", "y", "Yes", "yes"]
 repeat_input = "y"
